@@ -1,0 +1,29 @@
+<table>
+  <tbody>
+    <ng-container *ngFor="let customer of customerData">
+        <tr>
+          <th colspan="2">Id</th>
+          <th colspan="2">Cutomer Id</th>
+        </tr>
+      <tr>
+        <td colspan="2">{{ customer.id }}</td>
+        <td colspan="2">{{ customer.customer_id }}</td>
+      </tr>
+      <th colspan="4">
+        Pack Data ({{customer.pack_data.length}})
+      </th>
+      <tr>
+        <th>Ingredient</th>
+        <th>Inventory Code</th>
+        <th>Qquantity</th>
+        <th>Unit</th>
+      </tr>
+      <tr *ngFor="let packData of customer.pack_data">
+        <td>{{ packData.ingredient }}</td>
+        <td>{{ packData.inventory_code }}</td>
+        <td>{{ packData.quantity }}</td>
+        <td>{{ packData.unit }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
